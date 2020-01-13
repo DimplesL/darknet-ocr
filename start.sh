@@ -19,7 +19,7 @@ else
 fi
 
 sudo docker rm -f ibbd-ocr
-sudo docker run --runtime=nvidia -ti "$param" \
+sudo docker run --runtime=nvidia -ti $param \
     --name=ibbd-ocr \
     -v "$PWD":/ocr \
     -v "$PWD/test":/images \

@@ -1,5 +1,5 @@
-GPU=0
-CUDNN=0
+GPU=1
+CUDNN=1
 OPENCV=0
 OPENMP=0
 DEBUG=0
@@ -91,15 +91,18 @@ $(OBJDIR)%.o: %.c $(DEPS)
 $(OBJDIR)%.o: %.cu $(DEPS)
 	$(NVCC) $(ARCH) $(COMMON) --compiler-options "$(CFLAGS)" -c $< -o $@
 
-#obj:
-#	mkdir -p obj
-#backup:
-#	mkdir -p backup
-#results:
-#	mkdir -p results
+obj:
+	mkdir -p obj
+backup:
+	mkdir -p backup
+results:
+	mkdir -p results
 
 .PHONY: clean
 
 clean:
 	rm -rf $(OBJS) $(SLIB) $(ALIB) $(EXEC) $(EXECOBJ) $(OBJDIR)/*
+	rm -rf obj
+	rm -rf backup
+	rm -rf results
 

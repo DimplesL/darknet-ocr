@@ -56,8 +56,7 @@ def rotate_cut_img(im, box, leftAdjust=0.0, rightAdjust=0.0):
     return tmpImg
 
 
-def detect_lines(image, scale=600,
-                 maxScale=900,
+def detect_lines(image, scale=600, maxScale=900,
                  MAX_HORIZONTAL_GAP=30,
                  MIN_V_OVERLAPS=0.6,
                  MIN_SIZE_SIM=0.6,

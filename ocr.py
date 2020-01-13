@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 from time import time
 from config import scale, maxScale, TEXT_LINE_SCORE
-from server.image import base64_cv2
+from server.convert import base64_cv2
 from server.ocr import text_ocr
 
 
@@ -16,9 +16,8 @@ def ocr(image, debug=False):
     image = base64_cv2(image)
     time_take = time()
     res = do_ocr(image, debug=debug)
-    res = list(res)
     return {
-        'ocr': list(res),
+        'data': res,
         'waste_time': time() - time_take,
     }
 

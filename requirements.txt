@@ -3,4 +3,3 @@ opencv-contrib-python==4.0.0.21
 pillow
 h5py
 requests
-web.py==0.40.dev0

@@ -594,11 +594,12 @@ float *network_predict_image_vgg(network *net, image im)
     int h = im.h;
     //image imr = letterbox_image(im, w, h);
     resize_network(net, w, h);//resize net for image w,h
+    //printf("1 in network_predict_image_vgg");
     set_batch_network(net, 1);
+    //printf("2 in network_predict_image_vgg");
     float *p = network_predict(net, im.data);
+    //printf("3 in network_predict_image_vgg");
     //free_image(imr);
-    
-    
     return p;
 }
 
